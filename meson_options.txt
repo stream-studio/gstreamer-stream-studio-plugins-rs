@@ -1,0 +1,4 @@
+# Common options
+option('doc', type : 'feature', value : 'auto', yield: true,
+       description: 'Enable documentation.')
+

@@ -1,0 +1,19 @@
+[workspace]
+
+members = [
+]
+
+# Only plugins without external dependencies
+default-members = [
+]
+
+
+[profile.release]
+lto = true
+opt-level = 3
+debug = true
+panic = 'unwind'
+
+[profile.dev]
+opt-level = 1
+
