@@ -1,10 +1,12 @@
 [workspace]
 
 members = [
+    'net/rtmpserver'
 ]
 
 # Only plugins without external dependencies
 default-members = [
+    'net/rtmpserver'
 ]
 
 
