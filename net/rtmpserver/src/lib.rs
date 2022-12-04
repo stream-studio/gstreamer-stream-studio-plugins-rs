@@ -1,9 +1,9 @@
 use gst::glib;
-
+mod rtmpserver;
 
 
 fn plugin_init(plugin: &gst::Plugin) -> Result<(), glib::BoolError> {
-
+    rtmpserver::register(plugin);
     Ok(())
 }
 
