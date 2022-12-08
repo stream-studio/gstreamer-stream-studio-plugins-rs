@@ -2,9 +2,6 @@ use gst::{glib, subclass::prelude::*};
 use once_cell::sync::Lazy;
 use std::sync::Mutex;
 
-
-
-
 struct Settings {
 
 }
@@ -18,7 +15,6 @@ impl Default for Settings {
 }
 
 
-#[derive(Default)]
 pub struct RTMPServer {
     settings: Mutex<Settings>,
 
@@ -41,6 +37,7 @@ impl ObjectSubclass for RTMPServer {
 
 
     fn with_class(_klass: &Self::Class) -> Self {
+        
         Self {
             settings: Mutex::new(Settings::default()),
         }
@@ -52,12 +49,8 @@ impl ObjectSubclass for RTMPServer {
 impl ObjectImpl for RTMPServer {
     fn constructed(&self) {
         self.parent_constructed();
+        
     }
-}
-
-#[repr(C)]
-pub(crate) struct Class {
-    parent: gst::ffi::GstBinClass,
 }
 
 impl GstObjectImpl for RTMPServer {}
@@ -69,7 +62,7 @@ impl ElementImpl for RTMPServer {
         static ELEMENT_METADATA: Lazy<gst::subclass::ElementMetadata> = Lazy::new(|| {
             gst::subclass::ElementMetadata::new(
                 "RTMP Server",
-                "Generic",
+                "Net",
                 "RTMP Server",
                 "Ludovic Bouguerra <ludovic.bouguerra@stream.studio>",
             )

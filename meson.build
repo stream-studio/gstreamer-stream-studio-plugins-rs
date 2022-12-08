@@ -40,6 +40,7 @@ endif
 # kept in the same order as the `members` list in Cargo.toml
 plugins = {
   'rtmpserver': 'libgstrtmpserver',
+  'publish': 'libgstpublish',
 }
 
 extra_env = {}

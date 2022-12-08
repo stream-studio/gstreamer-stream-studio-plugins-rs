@@ -1,11 +1,13 @@
 [workspace]
 
 members = [
+    'general/publish',
     'net/rtmpserver'
 ]
 
 # Only plugins without external dependencies
 default-members = [
+    'general/publish',
     'net/rtmpserver'
 ]
 
